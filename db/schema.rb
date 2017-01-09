@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20170109211106) do
-
   create_table "books", force: :cascade do |t|
     t.string   "code"
     t.string   "authors"
@@ -24,5 +23,4 @@ ActiveRecord::Schema.define(version: 20170109211106) do
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_books_on_code", unique: true
   end
-
 end

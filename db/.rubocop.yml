@@ -1,0 +1,10 @@
+inherit_from: ../.rubocop.yml
+
+Style/StringLiterals:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+Style/EmptyLinesAroundBlockBody:
+  Enabled: false

@@ -5,40 +5,50 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     @book = books(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get books_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_book_url
     assert_response :success
   end
 
-  test "should create book" do
+  test 'should create book' do
     assert_difference('Book.count') do
-      post books_url, params: { book: { authors: @book.authors, code: @book.code, location: @book.location, notes: @book.notes, publisher: @book.publisher, title: @book.title, year: @book.year } }
+      post books_url, params: {
+        book: {
+          authors: @book.authors, code: @book.code, location: @book.location, notes: @book.notes,
+          publisher: @book.publisher, title: @book.title, year: @book.year
+        }
+      }
     end
 
     assert_redirected_to book_url(Book.last)
   end
 
-  test "should show book" do
+  test 'should show book' do
     get book_url(@book)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_book_url(@book)
     assert_response :success
   end
 
-  test "should update book" do
-    patch book_url(@book), params: { book: { authors: @book.authors, code: @book.code, location: @book.location, notes: @book.notes, publisher: @book.publisher, title: @book.title, year: @book.year } }
+  test 'should update book' do
+    patch book_url(@book), params: {
+      book: {
+        authors: @book.authors, code: @book.code, location: @book.location, notes: @book.notes,
+        publisher: @book.publisher, title: @book.title, year: @book.year
+      }
+    }
     assert_redirected_to book_url(@book)
   end
 
-  test "should destroy book" do
+  test 'should destroy book' do
     assert_difference('Book.count', -1) do
       delete book_url(@book)
     end
