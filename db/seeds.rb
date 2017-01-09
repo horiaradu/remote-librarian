@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+[
+  { code: 'R0501', authors: 'Felix Buffiere', title: 'Miturile lui Homer si gandirea greaca', location: 'Raft 05',
+    year: 1987, publisher: 'Univers' },
+  { code: 'R1503', authors: 'Radu Paraschivescu', title: 'Racani, pifani si veterani', location: 'Raft 15',
+    year: 2008, publisher: 'Humanitas' }
+].each do |data|
+  Book.create(data)
+end
