@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RemoteLibrarian</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>RemoteLibrarian</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body class="container">
+<body>
+<div class="row navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <%= link_to books_path, class: 'brand-logo' do %>
+          <i class="material-icons">library_books</i><%= content_for :title %>
+        <% end %>
+        <ul class="right">
+          <%= content_for :navbar_actions %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="row">
+  <div class="col m12 l8 offset-l2">
     <%= yield %>
-  </body>
+  </div>
+</div>
+</body>
 </html>

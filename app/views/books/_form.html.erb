@@ -11,42 +11,46 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :code %>
     <%= f.text_field :code %>
   </div>
 
-  <div class="field">
-    <%= f.label :authors %>
-    <%= f.text_field :authors %>
-  </div>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :publisher %>
-    <%= f.text_field :publisher %>
-  </div>
-
-  <div class="field">
-    <%= f.label :year %>
-    <%= f.number_field :year %>
-  </div>
-
-  <div class="field">
-    <%= f.label :notes %>
-    <%= f.text_area :notes %>
-  </div>
-
-  <div class="field">
+  <div class="input-field">
     <%= f.label :location %>
     <%= f.text_field :location %>
   </div>
 
+  <div class="input-field">
+    <%= f.label :authors %>
+    <%= f.text_field :authors %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label :publisher %>
+    <%= f.text_field :publisher %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label :year %>
+    <%= f.number_field :year %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes, class: 'materialize-textarea' %>
+  </div>
+
   <div class="actions">
+    <%= link_to books_path, class: 'btn waves-effect waves-light red' do %>
+      Cancel <i class="material-icons right">cancel</i>
+    <% end %>
+
     <%= f.button class: 'btn waves-effect waves-light' do %>
       Save <i class="material-icons right">send</i>
     <% end %>
