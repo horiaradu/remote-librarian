@@ -35,7 +35,7 @@
         <% end %>
       </td>
       <td>
-        <%= link_to book, class: 'waves-effect waves-light btn-flat', method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <%= link_to '#delete-confirm-modal', class: 'waves-effect waves-light btn-flat delete-book-btn', data: { id: book.id, title: book.title } do %>
           <i class="material-icons red-text">delete</i>
         <% end %>
       </td>
@@ -51,3 +51,5 @@
     <i class="material-icons">add</i>
   <% end %>
 </div>
+
+<%= render 'delete_confirmation_modal' %>
