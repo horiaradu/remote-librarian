@@ -28,5 +28,12 @@
     <%= yield %>
   </div>
 </div>
+
+<% flash.each do |type, msg| %>
+  <script>
+    Materialize.toast('<%= msg %>', 5000);
+  </script>
+<% end %>
+
 </body>
 </html>
