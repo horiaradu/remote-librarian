@@ -12,14 +12,14 @@
 <div class="row navbar-fixed">
   <nav>
     <div class="nav-wrapper">
-      <div class="col s12">
+      <div class="col s12" id="default-navbar">
         <%= link_to books_path, class: 'brand-logo' do %>
           <i class="material-icons">library_books</i><%= content_for :title %>
         <% end %>
-        <ul class="right">
-          <%= content_for :navbar_actions %>
-        </ul>
+        <%= content_for :navbar_actions %>
       </div>
+
+      <%= render 'books/search_bar' %>
     </div>
   </nav>
 </div>

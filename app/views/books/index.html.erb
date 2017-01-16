@@ -1,6 +1,10 @@
 <% content_for :title, 'Books' %>
 <% content_for :navbar_actions do %>
-  <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+  <ul class="right">
+    <li><a href="javascript:;" id="navbar-search-btn">
+      <i class="material-icons">search</i>
+    </a></li>
+  </ul>
 <% end %>
 
 <p id="notice"><%= notice %></p>
