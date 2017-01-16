@@ -4,7 +4,17 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    query = if params[:search].present?
+              {
+                title_matches: "%#{params[:search]}%",
+                authors_matches: "%#{params[:search]}%"
+              }.try(:merge, m: 'or')
+            else
+              params[:q]
+            end
+
+    @q = Book.ransack(query)
+    @books = @q.result(distinct: true)
   end
 
   # GET /books/1
