@@ -3,6 +3,8 @@
 
 document.addEventListener("turbolinks:load", function () {
   $('.modal').modal();
+  $(".brand-logo").sideNav();
+
   $('#search-bar').hide();
 
   $('#search-close').click(function hideSearchBar() {

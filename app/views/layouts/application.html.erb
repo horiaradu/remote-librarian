@@ -13,8 +13,8 @@
   <nav>
     <div class="nav-wrapper">
       <div class="col s12" id="default-navbar">
-        <%= link_to books_path, class: 'brand-logo' do %>
-          <i class="material-icons">library_books</i><%= content_for :title %>
+        <%= link_to 'javascript:;', class: 'brand-logo', 'data-activates': 'slide-out' do %>
+          <i class="material-icons">menu</i><%= content_for :title %>
         <% end %>
         <%= content_for :navbar_actions %>
       </div>
@@ -28,6 +28,8 @@
     <%= yield %>
   </div>
 </div>
+
+<%= render 'menu/slide' %>
 
 <% flash.each do |type, msg| %>
   <script>
