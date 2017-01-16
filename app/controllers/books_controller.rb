@@ -6,8 +6,8 @@ class BooksController < ApplicationController
   def index
     query = if params[:search].present?
               {
-                title_matches: "%#{params[:search]}%",
-                authors_matches: "%#{params[:search]}%"
+                title_cont: params[:search],
+                authors_cont: params[:search]
               }.try(:merge, m: 'or')
             else
               params[:q]
@@ -69,6 +69,12 @@ class BooksController < ApplicationController
     end
   end
 
+  # GET /books/search
+  # GET /books/search.json
+  def search
+    @search ||= Book.search(query_params)
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -79,5 +85,11 @@ class BooksController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def book_params
     params.require(:book).permit(:code, :authors, :title, :publisher, :year, :notes, :location)
+  end
+
+  def query_params
+    if params[:q].present?
+      params[:q].delete_if { |_, value| value.blank? }
+    end
   end
 end
