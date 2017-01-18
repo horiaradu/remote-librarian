@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails application to manage your book collection.
 
-Things you may want to cover:
+## Dependencies
 
-* Ruby version
+* ruby 2.4.0
+* rails 5.0.1
 
-* System dependencies
+In development & test mode, it uses sqlite3. In production, postgresql.
 
-* Configuration
+## Setup
 
-* Database creation
+```bundle install``` to install the dependencies
 
-* Database initialization
+```rails db create``` to create the database
 
-* How to run the test suite
+```rails db migrate``` to run the migrations
 
-* Services (job queues, cache servers, search engines, etc.)
+```rails db seed``` to populate the database
 
-* Deployment instructions
+## Running the tests
 
-* ...
+```rails test```
