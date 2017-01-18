@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  code: MyString
-  authors: MyString
-  title: MyString
-  publisher: MyString
-  year: 1
-  notes: MyText
-  location: MyString
+  code: CODE_1
+  authors: Bruce Waynt
+  title: Batman
+  publisher: Gotham Inc.
+  year: 2000
+  notes: good book
+  location: R01
 
 two:
-  code: MyString
-  authors: MyString
-  title: MyString
-  publisher: MyString
-  year: 1
-  notes: MyText
-  location: MyString
+  code: CODE_2
+  authors: James Gordon
+  title: Gotham PD
+  publisher: Gotham Inc.
+  year: 1999
+  notes: bad book
+  location: R02

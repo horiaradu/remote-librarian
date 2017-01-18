@@ -19,7 +19,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Book.count') do
       post books_url, params: {
         book: {
-          authors: @book.authors, code: @book.code, location: @book.location, notes: @book.notes,
+          authors: @book.authors, code: @book.code + '_3', location: @book.location, notes: @book.notes,
           publisher: @book.publisher, title: @book.title, year: @book.year
         }
       }
