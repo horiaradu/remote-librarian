@@ -1,0 +1,19 @@
+<% content_for :title, 'Manage Library' %>
+
+<%= form_tag books_import_path, method: :post do %>
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>File</span>
+      <input type="file">
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= button_tag class: 'btn waves-effect waves-light' do %>
+      Import <i class="material-icons right">send</i>
+    <% end %>
+  </div>
+<% end %>

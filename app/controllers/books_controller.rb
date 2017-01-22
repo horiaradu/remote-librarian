@@ -19,7 +19,8 @@ class BooksController < ApplicationController
 
   # GET /books/1
   # GET /books/1.json
-  def show; end
+  def show
+  end
 
   # GET /books/new
   def new
@@ -27,7 +28,8 @@ class BooksController < ApplicationController
   end
 
   # GET /books/1/edit
-  def edit; end
+  def edit
+  end
 
   # POST /books
   # POST /books.json
@@ -73,6 +75,16 @@ class BooksController < ApplicationController
   # GET /books/search.json
   def search
     @search ||= Book.search(query_params)
+  end
+
+  def manage
+  end
+
+  def import
+    respond_to do |format|
+      format.html { redirect_to books_url, notice: 'Successfully imported your books.' }
+      format.json { head :ok }
+    end
   end
 
   private
