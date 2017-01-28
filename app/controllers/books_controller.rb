@@ -1,3 +1,5 @@
+require 'csv'
+
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
@@ -81,9 +83,15 @@ class BooksController < ApplicationController
   end
 
   def import
+    @books = BooksCsvReader
+               .parse(params[:file].read)
+               .uniq { |book| book.code }
+    Book.transaction do
+      @books.each { |book| book.save! }
+    end
     respond_to do |format|
       format.html { redirect_to books_url, notice: 'Successfully imported your books.' }
-      format.json { head :ok }
+      format.json { render :index, status: :created, location: @books }
     end
   end
 

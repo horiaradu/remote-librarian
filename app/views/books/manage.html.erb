@@ -1,13 +1,13 @@
 <% content_for :title, 'Manage Library' %>
 
-<%= form_tag books_import_path, method: :post do %>
+<%= form_tag books_import_path, method: :post, multipart: true do %>
   <div class="file-field input-field">
     <div class="btn">
       <span>File</span>
-      <input type="file">
+      <input type="file" name="file">
     </div>
     <div class="file-path-wrapper">
-      <input class="file-path validate" type="text">
+      <input class="file-path validate" type="text" name="file_name">
     </div>
   </div>
 
