@@ -2,3 +2,8 @@ language: ruby
 cache: bundler
 rvm:
   - 2.4.0
+script:
+  - RAILS_ENV=test bundle exec rails db:drop
+  - RAILS_ENV=test bundle exec rails db:create
+  - RAILS_ENV=test bundle exec rails db:migrate
+  - bundle exec rails test
