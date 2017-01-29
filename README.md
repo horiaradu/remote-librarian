@@ -1,3 +1,5 @@
+https://travis-ci.org/horiaradu/remote-librarian.svg?branch=master
+
 # README
 
 Rails application to manage your book collection.
