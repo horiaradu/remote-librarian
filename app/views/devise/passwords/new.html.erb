@@ -1,0 +1,16 @@
+<h3>Forgot your password?</h3>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="input-field">
+    <%= f.label :email %><br/>
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.button class: 'btn btn-large waves-effect waves-light col s12 m6 offset-m3' do %>
+      Send me reset password instructions<i class="material-icons right">email</i>
+    <% end %>
+  </div>
+<% end %>

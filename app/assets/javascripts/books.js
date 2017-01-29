@@ -2,8 +2,12 @@
 // All this logic will automatically be available in application.js.
 
 document.addEventListener("turbolinks:load", function () {
+  console.log('fo');
   $('.modal').modal();
-  $(".brand-logo").sideNav();
+
+  var sideNavOpener = $(".brand-logo");
+  sideNavOpener.sideNav('destroy');
+  sideNavOpener.sideNav();
 
   $('#search-bar').hide();
 
