@@ -1,4 +1,4 @@
-<h3>Log in</h3>
+<h3>Sign in</h3>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="input-field">
@@ -24,12 +24,17 @@
 
   <div class="actions">
     <%= f.button class: 'btn btn-large waves-effect waves-light col s12 m6 offset-m3' do %>
-      Log in
+      Sign in
     <% end %>
   </div>
 <% end %>
 
-<div class="col s12 m6 offset-m3 center-align pt-10">
+<%= link_to user_google_oauth2_omniauth_authorize_path,
+            class: 'btn btn-large waves-effect waves-dark col s12 m6 offset-m3 mt-10 google-sign-in white black-text' do %>
+  Sign in with Google
+<% end %>
+
+<div class="col s12 m6 offset-m3 center-align mt-10">
   <%= link_to 'Create account', new_registration_path(resource_name) %><br/>
   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %>
 </div>

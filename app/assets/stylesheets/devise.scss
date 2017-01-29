@@ -6,6 +6,12 @@
   padding-top: 30px;
 }
 
-.pt-10 {
-  padding-top: 10px !important;
+.mt-10 {
+  margin-top: 10px !important;
+}
+
+.google-sign-in {
+  background-image: image-url("g-logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
