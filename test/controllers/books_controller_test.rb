@@ -25,7 +25,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
       }
     end
 
-    assert_redirected_to book_url(Book.last)
+    assert_redirected_to books_url
   end
 
   test 'should show book' do
@@ -45,7 +45,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
         publisher: @book.publisher, title: @book.title, year: @book.year
       }
     }
-    assert_redirected_to book_url(@book)
+    assert_redirected_to books_url
   end
 
   test 'should destroy book' do

@@ -16,7 +16,7 @@ class BooksController < ApplicationController
             end
 
     @q = Book.ransack(query)
-    @books = @q.result(distinct: true)
+    @books = @q.result(distinct: true).paginate(:page => params[:page], per_page: params[:per_page])
   end
 
   # GET /books/1
