@@ -30,5 +30,6 @@
 <% end %>
 
 <div class="col s12 m6 offset-m3 center-align pt-10">
-  <%= link_to 'Create account', new_registration_path(resource_name) %>
+  <%= link_to 'Create account', new_registration_path(resource_name) %><br/>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %>
 </div>
