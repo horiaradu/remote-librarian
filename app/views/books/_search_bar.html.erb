@@ -1,9 +1,0 @@
-<%= form_tag books_path, class: 'search-bar', id: 'search-bar', method: :get do %>
-  <div class="input-field">
-    <%= search_field_tag 'search', nil, required: true %>
-    <%= label_tag 'search' do %>
-      <i class="material-icons">search</i>
-    <% end %>
-    <i id="search-close" class="material-icons">close</i>
-  </div>
-<% end %>

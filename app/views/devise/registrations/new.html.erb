@@ -29,11 +29,6 @@
   </div>
 <% end %>
 
-<%= link_to user_google_oauth2_omniauth_authorize_path,
-            class: 'btn btn-large waves-effect waves-dark col s12 m6 offset-m3 mt-10 google-sign-in white black-text' do %>
-  Sign in with Google
-<% end %>
-
 <div class="col s12 m6 offset-m3 center-align mt-10">
   <%= link_to 'Already have an account?', new_session_path(resource_name) %><br/>
   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %>

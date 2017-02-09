@@ -11,33 +11,12 @@
 </head>
 
 <body>
-<div class="row navbar-fixed">
-  <nav>
-    <div class="nav-wrapper">
-      <div class="col s12" id="default-navbar">
-        <%= link_to 'javascript:;', class: 'brand-logo left', 'data-activates': 'slide-out' do %>
-          <i class="material-icons">menu</i><%= (content_for :title) || 'Remote Librarian' %>
-        <% end %>
-        <%= content_for :navbar_actions %>
-      </div>
-
-      <%= render 'books/search_bar' %>
-    </div>
-  </nav>
-</div>
 <div class="row">
   <div class="col s12 l8 offset-l2">
     <%= yield %>
   </div>
 </div>
 
-<%= render 'menu/slide' %>
-
-<% flash.each do |type, msg| %>
-  <script>
-    Materialize.toast('<%= msg %>', 5000);
-  </script>
-<% end %>
 
 </body>
 </html>
